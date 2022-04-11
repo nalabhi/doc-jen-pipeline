@@ -41,5 +41,12 @@
    		<maven.compiler.source>6</maven.compiler.source>
    		<maven.compiler.target>1.6</maven.compiler.target>
  	</properties>
+	<plugin>
+		<artifactID>maven-war-plugin</artifactID>
+		<version>3.0.0</version>
+		<configuration>
+		   <failOnMissingWebXml>false</failOnMissingWebXml>
+		<configuration>
+	</plugin>	
 	
 </project>
