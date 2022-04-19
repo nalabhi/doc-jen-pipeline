@@ -7,20 +7,20 @@
 	<packaging>war</packaging>
 	<version>1.0</version>
 	
-	<name>Java Web Application</name>
-	<url>http://mithuntechnologies.com</url>
+	<name>doc-jen-pipeline</name>
+	<url>http://test.com</url>
 	
-	<description>Java Web Project</description>
+	<description>Java Application</description>
 
 	<organization>
-		<name>Mithun Technologies</name>
-		<url>http://mithuntechnologies.com/</url>
+		<name>Test</name>
+		<url>http://test.com/</url>
 	</organization>
 
 	<properties>
 		<!-- versions -->
-		
-		<spring.version>5.0.7.RELEASE</spring.version>
+		<jdk.version>1.8</jdk.version>
+		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.12</junit.version>
 		<log4j.version>1.2.17</log4j.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -112,19 +112,46 @@
 	</distributionManagement> -->
 	
 	<build>
+	       <finalName>doc-jen-pipeline</finalName>
+		
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.5.1</version>
-				<inherited>true</inherited>
+				<version>3.3</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
 				</configuration>
 			</plugin>
+
 			<plugin>
-  				<artifactId>maven-war-plugin</artifactId>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.2.11.v20150529</version>
+				<configuration>
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<webApp>
+						<contextPath>/doc-jen-pipeline</contextPath>
+					</webApp>
+				</configuration>
+			</plugin>
+			
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+					<wtpversion>2.0</wtpversion>
+					<wtpContextName>doc-jen-pipeline</wtpContextName>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+  				<artifactId>doc-jen-pipeline</artifactId>
   				<version>2.6</version>
   				<configuration>
     				<failOnMissingWebXml>false</failOnMissingWebXml>
