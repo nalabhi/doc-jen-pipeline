@@ -7,20 +7,20 @@
 	<packaging>war</packaging>
 	<version>1.0</version>
 	
-	<name>doc-jen-pipeline</name>
-	<url>http://test.com</url>
+	<name>Java Web Application</name>
+	<url>http://mithuntechnologies.com</url>
 	
-	<description>Java Application</description>
+	<description>Java Web Project</description>
 
 	<organization>
-		<name>Test</name>
-		<url>http://test.com/</url>
+		<name>Mithun Technologies</name>
+		<url>http://mithuntechnologies.com/</url>
 	</organization>
 
 	<properties>
 		<!-- versions -->
-		<jdk.version>1.8</jdk.version>
-		<spring.version>5.1.2.RELEASE</spring.version>
+		
+		<spring.version>5.0.7.RELEASE</spring.version>
 		<junit.version>4.12</junit.version>
 		<log4j.version>1.2.17</log4j.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -112,46 +112,19 @@
 	</distributionManagement> -->
 	
 	<build>
-	       <finalName>doc-jen-pipeline</finalName>
-		
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.3</version>
+				<version>2.5.1</version>
+				<inherited>true</inherited>
 				<configuration>
-					<source>${jdk.version}</source>
-					<target>${jdk.version}</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
-
 			<plugin>
-				<groupId>org.eclipse.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<version>9.2.11.v20150529</version>
-				<configuration>
-					<scanIntervalSeconds>10</scanIntervalSeconds>
-					<webApp>
-						<contextPath>/doc-jen-pipeline</contextPath>
-					</webApp>
-				</configuration>
-			</plugin>
-			
-			
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<version>2.9</version>
-				<configuration>
-					<downloadSources>true</downloadSources>
-					<downloadJavadocs>true</downloadJavadocs>
-					<wtpversion>2.0</wtpversion>
-					<wtpContextName>doc-jen-pipeline</wtpContextName>
-				</configuration>
-			</plugin>
-			
-			<plugin>
-  				<artifactId>doc-jen-pipeline</artifactId>
+  				<artifactId>maven-war-plugin</artifactId>
   				<version>2.6</version>
   				<configuration>
     				<failOnMissingWebXml>false</failOnMissingWebXml>
@@ -161,4 +134,5 @@
 		</plugins>
 	</build>
 
+	
 </project>
