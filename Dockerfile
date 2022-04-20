@@ -1,5 +1,5 @@
 FROM centos:7
-RUN mkdir /opt/tomcat/
+RUN mkdir -p /opt/tomcat/
 WORKDIR /opt/tomcat
 RUN curl -O https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.62/bin/apache-tomcat-9.0.62.tar.gz
 RUN tar xvfz apache*.tar.gz
