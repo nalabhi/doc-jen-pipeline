@@ -7,6 +7,6 @@ RUN mv apache-tomcat-9.0.62/* /opt/tomcat/.
 RUN yum install java-1.8.0-openjdk -y
 RUN java -version
 WORKDIR /opt/tomcat/webapps
-COPY target/*.war /opt/tomcat/webapps
+COPY /var/lib/jenkins/workspace/docker-pipeline/target/*.war /opt/tomcat/webapps
 EXPOSE 8080
 CMD ["/opt/tomcat/bin/catalina.sh", "run"]
