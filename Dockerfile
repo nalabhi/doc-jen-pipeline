@@ -1,4 +1,4 @@
-FROM centos
+FROM centos:7
 RUN mkdir /opt/tomcat/
 WORKDIR /opt/tomcat
 RUN curl -O https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.62/bin/apache-tomcat-9.0.62.tar.gz
